@@ -1,0 +1,17 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+# 完全离线：使用本机 solc 包装脚本（solcjs），禁止 forge 联网下载 solc
+solc = "/home/lrh4090/.local/bin/solc"
+auto_detect_solc = false
+offline = true
+evm_version = "cancun"
+
+[profile.default.fuzz]
+runs = 512
+
+[profile.default.invariant]
+runs = 32
+depth = 64
+fail_on_revert = false
